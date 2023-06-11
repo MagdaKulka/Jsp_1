@@ -20,7 +20,7 @@ function handleIncomeFormSubmit(event) {
 	renderIncomeList();
 	countIncomes();
 	differenceIncomesAndExpenses();
-	interator =interator +1;
+	iterator = iterator + 1;
 }
 function renderIncomeList() {
 	incomesList.innerHTML = '';
@@ -33,14 +33,25 @@ function renderIncomeList() {
 		btn.textContent = 'edycja';
 		li.appendChild(btn);
 		btn.addEventListener('click', () => {
-			console.log('effect');
+			const title = window.prompt('podaj nową nazwę');
+			const value = window.prompt('podaj kwotę');
+			incomesArray[index] = {
+				title,
+				value,
+			};
+			li.innerHTML = `${title} ${value}`;
+			countIncomes();
+			differenceIncomesAndExpenses();
 		});
+
 		const btnDelete = document.createElement('button');
 		btnDelete.textContent = 'usun';
 		li.appendChild(btnDelete);
 		btnDelete.addEventListener('click', () => {
-			console.log('effect');
 			li.remove();
+			incomesArray.splice(index, 1);
+			countIncomes();
+			differenceIncomesAndExpenses();
 		});
 		incomesList.appendChild(li);
 	});
@@ -64,14 +75,24 @@ function renderExpenseList() {
 		btn.textContent = 'edycja';
 		li.appendChild(btn);
 		btn.addEventListener('click', () => {
-			console.log('effect');
+			const title = window.prompt('podaj nową nazwę');
+			const value = window.prompt('podaj kwotę');
+			expensesArray[index] = {
+				title,
+				value,
+			};
+			li.innerHTML = `${title} ${value}`;
+			countExpenses();
+			differenceIncomesAndExpenses();
 		});
 		const btnDelete = document.createElement('button');
 		btnDelete.textContent = 'usun';
 		li.appendChild(btnDelete);
 		btnDelete.addEventListener('click', () => {
-			calculateExpenses(expense.id);
 			li.remove();
+			expensesArray.splice(index, 1);
+			countExpenses();
+			differenceIncomesAndExpenses();
 		});
 		expensesList.appendChild(li);
 	});
@@ -108,7 +129,4 @@ function calculateIncomes(value) {
 		return item.id !== value;
 	});
 	countIncomes();
-stworzyc funkcję calculte incomes tam analogicznie bede przypisywała incomes Arraya tan count expenses count Income,
-jak robię hendle income zrobic lt iterator income,
-dodac id do tablicy i potem w renderincome list dodac li id i wywołanie funkcji 
-
+}
