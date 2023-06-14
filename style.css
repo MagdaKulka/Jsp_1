@@ -1,66 +1,62 @@
 @import './variables.css';
 
-body{
-    background-image: var(--main-bg-gradient)
-} 
-
-html{
-    font-family: Roboto, sans-serif;
+body {
+	background-image: var(--main-bg-gradient);
 }
 
-input{
-    margin: 5px 0;
+html {
+	font-family: Roboto, sans-serif;
 }
 
-main{
-    min-height: 100vh;
+.input {
+	margin: 5px 0;
 }
 
-.container{
-    width: 100%;
-    margin: 0 auto;
-    padding: 30px 10px;
+.container {
+	width: 100%;
+	margin: 0 auto;
+	padding: 30px 10px;
 }
 
-.flex{
-    display: flex;
+.flex {
+	display: flex;
 }
 
-.flex--space-between{
-    justify-content: space-between;
+.flex--space-between {
+	justify-content: space-between;
 }
 
-.text--center{
-    text-align: center;
+.text--center {
+	text-align: center;
 }
 
-.app__logo{
-    width: 150px;
-    height: 150px;
-    margin: 30px auto;
+.app__logo {
+	width: 150px;
+	height: 150px;
+	margin: 30px auto;
 }
 
-.app__logo img{
-    width: 100%;
-    height: auto;
+.app__logo img {
+	width: 100%;
+	height: auto;
 }
 
-h1{
-    color: var(--peach);
-    font-size: var(--font-xl);
-    font-weight: 700;
+.app-heading {
+	color: var(--peach);
+	font-size: var(--font-xl);
+	font-weight: 700;
 }
 
-h2{
-    font-size: var(--font-m);
-    font-weight: 700;
+.form-heading {
+	font-size: var(--font-m);
+	font-weight: 700;
 }
 
-.budget__state{
-    font-size: var(--font-l);
-    font-weight: 700;
+.budget__state {
+	font-size: var(--font-l);
+	font-weight: 700;
 }
 
-.budget__state--success{
-    color: var(--success);
+.budget__state--success {
+	color: var(--success);
 }

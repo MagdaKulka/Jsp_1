@@ -14,48 +14,37 @@
 	<body>
 		<main class="container">
 			<header>
-				<h1 class="text--center">Home budget</h1>
+				<h1 class="text--center app-heading">Home budget</h1>
 				<div class="app__logo"><img src="assets/budget.png" /></div>
 				<div id="budgetState" class="budget__state budget__state--success">
-					<p class="text--center">your budget is zero <span id="budgetValue">0</span> PLN</p>
+					<p class="text--center" id="budgetValue">Bilans wynosi zero</p>
 				</div>
 			</header>
-			<section class="flex flex--space-between budget__list__wrapper">
-				<div class="budget__incomes">
-					<h2 class="budget__list__header incomes__header">Incomes</h2>
-					<form id="incomeForm" class="budget__list__form">
-						<input
-							type="text"
-							id="incomeTitle"
-							name="incomeTitle"
-							class="budget__list__form__input budget__list__form__input--text" />
-						<input
-							type="number"
-							id="incomeValue"
-							name="incomeValue"
-							class="budget__list__form__input budget__list__form__input--number" />
-						<input type="submit" value="Add" class="budget__list__form__input__button" />
+			<section class="flex flex--space-between">
+				<div>
+					<h2 class="form-heading">Incomes</h2>
+					<form id="incomeForm">
+						<input type="text" id="incomeTitle" name="incomeTitle" class="input" />
+						<input type="number" id="incomeValue" name="incomeValue" class="input" />
+						<input type="submit" value="Add" />
 					</form>
 					<ul id="incomesList" class="budget__list"></ul>
-					<p class="budget__list__summary">Incomes sum: <span id="incomesValue">0</span> PLN</p>
+					<p>Incomes sum: <span id="incomesValue">0</span> PLN</p>
 				</div>
 				<div class="budget__expenses">
-					<h2 class="budget__list__header expenses__header">Expenses</h2>
-					<form id="expenseForm" class="budget__list__form">
-						<input type="text" id="expenseTitle" class="budget__list__form__input budget__list__form__input--text" />
-						<input
-							type="number"
-							id="expenseValue"
-							class="budget__list__form__input budget__list__form__input--number" />
-						<input type="submit" value="Add" class="budget__list__form__input__button" />
+					<h2 class="form-heading">Expenses</h2>
+					<form id="expenseForm">
+						<input type="text" id="expenseTitle" class="input" />
+						<input type="number" id="expenseValue" class="input" />
+						<input type="submit" value="Add" />
 					</form>
 					<ul id="expensesList" class="budget__list"></ul>
-					<p class="budget__list__summary">Expenses sum: <span id="expensesValue">0</span> PLN</p>
+					<p>Expenses sum: <span id="expensesValue">0</span> PLN</p>
 				</div>
 			</section>
 		</main>
 		<footer>
-			<a class="icon__credentials" href="https://www.flaticon.com/free-icons/accounting" title="accounting icons"
+			<a href="https://www.flaticon.com/free-icons/accounting" title="accounting icons"
 				>Accounting icons created by Eucalyp - Flaticon</a
 			>
 		</footer>

@@ -16,6 +16,12 @@ expenseForm.addEventListener('submit', handleExpenseFormSubmit);
 
 function handleIncomeFormSubmit(event) {
 	event.preventDefault();
+
+	if (event.target.incomeTitle.value === '' || event.target.incomeValue.value <= 0) {
+		window.alert('Podaj poprawne wartości');
+		return;
+	}
+
 	incomesArray.push({ title: event.target.incomeTitle.value, value: event.target.incomeValue.value });
 	renderIncomeList();
 	countIncomes();
@@ -59,6 +65,10 @@ function renderIncomeList() {
 let iterator = 0;
 function handleExpenseFormSubmit(event) {
 	event.preventDefault();
+	if (event.target.expenseTitle.value === '' || event.target.expenseValue.value <= 0) {
+		window.alert('Podaj poprawne wartości');
+		return;
+	}
 	expensesArray.push({ id: iterator, title: event.target.expenseTitle.value, value: event.target.expenseValue.value });
 	renderExpenseList();
 	countExpenses();
@@ -116,8 +126,18 @@ function countExpenses() {
 function differenceIncomesAndExpenses() {
 	const stateOfBudget = countIncomes() - countExpenses();
 	const difference = document.getElementById('budgetValue');
-	difference.innerHTML = stateOfBudget;
+
+	if (stateOfBudget === 0) {
+		return 'Bilans wynosi zero';
+	}
+
+	if (stateOfBudget > 0) {
+		difference.textContent = `Możesz jeszcze wydać ${stateOfBudget} zł`;
+	} else {
+		difference.textContent = `Bilans jest ujemny. Jesteś na minusie ${Math.abs(stateOfBudget)} złotych`;
+	}
 }
+
 function calculateExpenses(value) {
 	expensesArray = expensesArray.filter((item) => {
 		return item.id !== value;
